@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disclosure</title>
+    <link rel="stylesheet" href="./build/tailwind.css" />
+  </head>
+  <body
+    class="bg-gradient-to-r from-pink-500 to-yellow-500 flex justify-center items-center h-screen"
+  >
+    <!-- accordion -->
+    <div
+      class="max-w-md bg-slate-100 w-full rounded-md p-4 space-y-4"
+      
+    >
+      <!-- accordion.NO1 -->
+      <div x-data="{open:false}">
+        <!-- header -->
+        <div
+          @click="open = !open"
+          class="bg-pink-300 rounded-md p-2 cursor-pointer flex justify-between items-center "
+        >
+          <p class="capitalize text-pink-800 font-bold">
+            what is your refund policy?
+          </p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 stroke-2  text-pink-800 transform origin-center transition ease-linear duration-300 delay-75"
+            :class="open === true ? 'rotate-180' : '' "
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </div>
+        <!-- content -->
+        <div x-show="open" class="mt-4 px-4 text-slate-700 capitalize ">
+          If you're unhappy with your purchase for any reason, email us within
+          90 days and we'll refund you in full, no questions asked.
+        </div>
+      </div>
+      <!-- accordion.NO2 -->
+      <div x-data="{open:false}" >
+        <!-- header -->
+        <div
+          @click="open = !open"
+          class="bg-pink-300 rounded-md p-2 cursor-pointer flex justify-between items-center"
+        >
+          <p class="capitalize text-pink-800 font-bold">
+            do you offer technichal support ?
+          </p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 stroke-2 text-pink-800 transition ease-linear delay-75 duration-300 "
+            :class="open === true ? 'rotate-180' : '' "
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        </div>
+        <!-- content -->
+        <div x-show="open" class="mt-4 px-4 text-slate-700 capitalize">
+          no .
+        </div>
+      </div>
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </body>
+</html>
